@@ -1,0 +1,150 @@
+@import "_partials/mixins";
+@import "_partials/variables";
+
+#instagram_row{
+	height: 194px;
+    margin-bottom: -66px;
+    position:relative;
+    z-index: 9999999999;
+	
+	.slick-list{
+		overflow: visible !important;
+		height:200px;
+		//position:relative;
+	}
+	li{
+		outline: 0 !important;
+		a{
+			outline: 0 !important;
+		}
+	}
+	ul{
+		margin-bottom: 0 !important; 
+	}
+	.slick-track{
+		height:176px !important;
+	}
+	.instacenter{
+		//position: absolute;
+  		width: 100%;
+  		height:200px;
+	}
+	&.fullwidth{
+		@include trans();
+  		&:hover{
+  			button{
+  				opacity: 1 !important;
+  			}
+  		}
+  		button{
+  			@include trans();
+  			position:absolute;
+  			height: 181px;
+  			top: 0px;
+  			z-index: 999;
+  			opacity: 0 !important;
+  			background-color: rgba(51, 51, 51, 0.7) !important;
+  			border:none !important;
+  			outline: unset !important;
+  			&.slick-next{
+  				right: 0;
+			}
+  			&.slick-prev{
+  				left:0;
+  			}
+  			&:hover{
+  				  background-color: #333333 !important;
+  				 
+  			}
+  		}
+ 		
+		a{
+			@include trans();
+			padding: 0;
+		    overflow: hidden;
+		    cursor: pointer;
+		    position: relative;
+		    min-height: 1px;
+		    padding-left: 0;
+		    padding-right: 0;
+		    height:210px;
+			img{
+				transition: all .3s ease-in .1s;
+			}
+			.iCaption{
+				position: absolute;
+			  //  width: 100%;
+			    color: #fff;
+			    //height: 100%;
+			    width:210px;
+			    height:210px;
+			    text-align: center;
+			    top: 0;
+			    font-size: 18px;
+			    left: 0;
+			    opacity: 0;
+			    overflow: hidden;
+				@include trans();
+
+				&:hover{
+					opacity: 1;
+				}
+
+				&:before{
+					content: '';
+				    height: 100%;
+				    width: 1px;
+				    //margin-left: -1px;
+				    display: inline-block;
+				    vertical-align: middle;
+				}
+				&:after{
+					content: '';
+				    height: 100%;
+				    width: 100%;
+				    position: absolute;
+				    //top: 0;
+				    //left: 0;
+				    z-index: 10;
+				  	background: #000;
+				    opacity: .75;
+				    filter: alpha(opacity=75);
+				    transition: background .3s ease-in .1s;
+				}
+				span{
+				    font-size: 14px;
+				    vertical-align: middle;
+				    display: inline-block;
+				    position: relative;
+				    z-index: 12;
+				    margin-top: -15px;
+				    //padding: 15px;
+				    
+				    -webkit-transition: margin-top .2s ease .2s;
+	                   -moz-transition: margin-top .2s ease .2s;
+	                    -ms-transition: margin-top .2s ease .2s;
+	                     -o-transition: margin-top .2s ease .2s;
+	                        transition: margin-top .2s ease .2s;
+	    		}
+			}
+			&:hover{
+				img{
+					@include transform(1.50);
+				}
+				.iCaption{
+					span{
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	} 
+	.image_container{
+		width:210px;
+		height:210px;
+		overflow: hidden;
+		&:hover{
+			@include transform(1.00);
+		}  
+	}
+} 
